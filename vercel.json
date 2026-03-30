@@ -1,7 +1,14 @@
 {
   "installCommand": "npm i -g pnpm && pnpm install",
   "buildCommand": "pnpm run build",
+  "outputDirectory": ".",
   "framework": null,
+  "functions": {
+    "api/index.js": {
+      "runtime": "@vercel/node@3",
+      "includeFiles": "dist/**"
+    }
+  },
   "rewrites": [
     { "source": "/(.*)", "destination": "/api" }
   ]
